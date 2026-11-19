@@ -1,0 +1,178 @@
+.App {
+  padding: 24px 40px;
+}
+
+body { 
+  background: white;
+}
+
+.App h1 { 
+  color: black; 
+  margin: 2% 20px 8px;
+}
+/*.App h1:last-child { border-bottom: none; }*/
+
+.App > p { 
+  color: rgb(51, 51, 51);
+  margin: 2% 20px 30px; 
+}
+
+.note.incompleted h3 {
+  color: white;
+}
+
+.note.incompleted p {
+  color: white;
+}
+
+.note.completed h3 {
+  color: hotpink;
+}
+
+.note.completed p {
+  color: hotpink;
+}
+
+.notes-box {
+  background-color: #ffaa33;
+  border-radius: 25px;
+  padding: 10px;
+  margin: 20px;
+  /*width: 100%;*/
+  max-width: 600px;
+}
+
+.notes-box ul {
+  list-style: none;
+  padding: 0;
+}
+
+.note-controls {
+  flex-shrink: 0;
+  display: flex;
+  gap: 8px;
+}
+
+
+/* claude additions */
+.note {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 12px 0;
+}
+.note:last-child { border-bottom: none; }
+
+.note-text h3,
+.note-text p { margin: 0; }
+.note-text p { margin-top: 4px; }
+
+.note-title { line-height: 1.2; }
+/**/
+
+.note-text {
+  text-align: left;
+}
+/* /\ do i need this line?*/
+
+.note-title {
+  margin: 0;
+  line-height: 1.2;
+  max-width: 20ch;
+  overflow-wrap: anywhere;
+}
+
+.note input[type="checkbox"] {
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  margin: 0;
+  background: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.note input[type="checkbox"]:hover {
+  background: pink
+}
+.note input[type="checkbox"]:checked {
+  background: hotpink;
+  border: none;
+}
+
+.delete-button {
+  flex-shrink: 0;
+  background: #cc55008a;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  padding: 0 0 0 0;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.delete-button:hover {
+  background: #cc5500;
+}
+
+.form-box form {
+  background-color: #F88379;
+  border-radius: 25px;
+  padding: 15px;
+  margin: 20px;
+  /*width: 100%;*/
+  max-width: 300px;
+}
+
+.form-box label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  color: white
+}
+
+.form-box input[type="text"] {
+  background-color: white;
+  color: rgb(46, 39, 39);
+  border-radius: 25px;
+  border: none;
+  box-shadow: 0 2px 6px rgba(83, 36, 36, 0.);
+  width: 100%;
+}
+
+.add-note {
+  background: #dd5d54;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 6px 16px;
+  margin-top: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.add-note:hover {
+  background: #b4443c;
+}
+
+/* for phone screen */
+@media (max-width: 600px) {
+  .App {
+    padding: 24px 4px;
+  }
+  .note {
+    gap: 8px;
+  }
+  .note input[type="checkbox"] {
+    width: 30px;
+    height: 30px;
+  }
+  .delete-button {
+    width: 30px;
+    height: 30px;
+    font-size: 16px
+  }
+}
