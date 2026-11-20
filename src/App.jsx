@@ -88,9 +88,7 @@ function NoteForm({onAddNote}) {
 
 function App() {
   const [notes, setNotes] = useState([ /// stores the notes data
-    { id : '1', title: 'Walk dogs', description: 'Walk around the block', completed: false },
-    { id : '2', title: 'Lunch', description: 'Make a smoothie', completed: false},
-    { id : '3', title: 'Yoga', description: 'Stretch for 30 minutes', completed: false},
+    { id : '1', title: 'Title', description: 'Description', completed: false },
   ]);
 
   function updateNoteCompletion(noteId, newStatus) { /// handles completion status of items
