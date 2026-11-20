@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './App.css';
 
 function Intro({ message }) {
@@ -86,10 +87,19 @@ function NoteForm({onAddNote}) {
   );
 }
 
+const starterNotes = [
+  { id: '1', title: 'Title', description: 'Description', completed: false },
+];
+
 function App() {
-  const [notes, setNotes] = useState([ /// stores the notes data
-    { id : '1', title: 'Title', description: 'Description', completed: false },
-  ]);
+  const [notes, setNotes] = useState(() => { /// load saved notes, or use starter notes on first visit
+    const saved = localStorage.getItem('notes');
+    return saved ? JSON.parse(saved) : starterNotes;
+  });
+
+  useEffect(() => { /// save notes every time they change
+    localStorage.setItem('notes', JSON.stringify(notes));
+  }, [notes]);
 
   function updateNoteCompletion(noteId, newStatus) { /// handles completion status of items
     setNotes((currentNotes) => 
