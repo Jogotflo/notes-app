@@ -141,6 +141,7 @@ body {
   border: none;
   box-shadow: 0 2px 6px rgba(83, 36, 36, 0.);
   width: 100%;
+  font-size: 24px;
 }
 
 .add-note {
